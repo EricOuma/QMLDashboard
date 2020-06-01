@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>assets/images/logo.png</file>
+        <file>components/DataPane.qml</file>
+        <file>views/Login.qml</file>
+        <file>components/Tabs.qml</file>
+        <file>assets/fonts/brands.otf</file>
+        <file>assets/fonts/regular.otf</file>
+        <file>assets/fonts/solid.otf</file>
+        <file>components/TabButton.qml</file>
+        <file>components/TopBar.qml</file>
+        <file>assets/images/user.jpg</file>
     </qresource>
 </RCC>
