@@ -11,5 +11,6 @@
         <file>components/TabButton.qml</file>
         <file>components/TopBar.qml</file>
         <file>assets/images/user.jpg</file>
+        <file>components/RoundPane.qml</file>
     </qresource>
 </RCC>

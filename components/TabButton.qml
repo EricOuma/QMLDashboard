@@ -12,7 +12,6 @@ MouseArea {
 
     Layout.preferredHeight: 50
     Layout.fillWidth: true
-    Layout.leftMargin: 10
     Layout.alignment: Qt.AlignCenter
 
 
@@ -22,7 +21,7 @@ MouseArea {
         Material.background: Material.Cyan
 
         RowLayout {
-            spacing: 6
+            spacing: 12
             Label {
                 id: icon
                 font.pixelSize: 15
