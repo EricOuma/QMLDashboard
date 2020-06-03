@@ -12,15 +12,16 @@ MouseArea {
 
     Layout.preferredHeight: 50
     Layout.fillWidth: true
+    Layout.fillHeight: true
     Layout.alignment: Qt.AlignCenter
 
 
-    Rectangle {
+    Pane {
         id: myRect
         anchors.fill: parent
-        Material.background: Material.Cyan
 
         RowLayout {
+            Layout.preferredWidth: parent.width
             spacing: 12
             Label {
                 id: icon

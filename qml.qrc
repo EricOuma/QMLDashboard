@@ -12,5 +12,10 @@
         <file>components/TopBar.qml</file>
         <file>assets/images/user.jpg</file>
         <file>components/RoundPane.qml</file>
+        <file>components/OrdersGraph.qml</file>
+        <file>components/SalesChart.qml</file>
+        <file>views/Dashboard.qml</file>
+        <file>views/Register.qml</file>
+        <file>views/Profile.qml</file>
     </qresource>
 </RCC>

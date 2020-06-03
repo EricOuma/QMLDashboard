@@ -2,6 +2,8 @@ QT += quick
 
 QT += quickcontrols2
 
+QT += widgets
+
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
