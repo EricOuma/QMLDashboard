@@ -8,8 +8,12 @@ import QtCharts 2.12
 import "../components"
 
 Pane {
-    Layout.preferredHeight: 350
-    Layout.fillWidth: true
+    height: 350
+//    anchors {
+//        left: parent.left
+//        right: parent.right
+//    }
+
     Material.background: Material.Blue
 
     ColumnLayout {

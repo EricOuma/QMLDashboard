@@ -3,25 +3,27 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
-MouseArea {
-//    cursorShape: Qt.OpenHandCursor
 
+Pane {
     property alias textIcon: icon.text
     property alias textTab: tabname.text
     property alias fontFamily: icon.font.family
+    property int index
+    property string url
 
-    Layout.preferredHeight: 50
     Layout.fillWidth: true
-    Layout.fillHeight: true
-    Layout.alignment: Qt.AlignCenter
+    Layout.preferredHeight: 50
 
-
-    Pane {
-        id: myRect
+    MouseArea {
         anchors.fill: parent
+        cursorShape: Qt.OpenHandCursor
+        onClicked: {
+            tabIndex = index
+            stackId.replace(Qt.resolvedUrl(url))
+        }
 
         RowLayout {
-            Layout.preferredWidth: parent.width
+            anchors.fill: parent
             spacing: 12
             Label {
                 id: icon

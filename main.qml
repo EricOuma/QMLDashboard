@@ -24,6 +24,8 @@ Window {
 // END OF FONT MANENOS
 
     property alias stackId: stack
+    property int tabIndex: 1
+//    property string pageUrl
 
     RowLayout {
         spacing: 1
@@ -53,6 +55,7 @@ Window {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Tabs{
+                        id: tabs
 //                        anchors.fill: parent
                         anchors {
                             left: parent.left
@@ -97,25 +100,29 @@ Window {
                 }
 
 // THE BEGINNING OF STACKVIEW SECTION
-                StackView {
-                       id: stack
-                       initialItem: one
-                   }
+                Item {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    ScrollView {
+//                        anchors.fill: parent
+                        width: parent.width
+                        height: 600
+                        clip: true
+                        Item{
+                            anchors.fill: parent
+                            StackView {
+                                   id: stack
+                                   anchors.fill: parent
+                                   initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
+                               }
+                        }
 
-                   Component {
-                       id: one
+                    }
+                }
 
-                       Label {
-                           text: "Dashboard"
-                       }
-                   }
-                   Component {
-                       id: two
 
-                       Label {
-                           text: "Profile"
-                       }
-                   }
+
+
 
 //====----------------THE END OF STACKVIEW SECTION--------------------------------------
 
