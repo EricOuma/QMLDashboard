@@ -8,11 +8,8 @@ import QtCharts 2.12
 import "../components"
 
 Pane {
-    height: 350
-//    anchors {
-//        left: parent.left
-//        right: parent.right
-//    }
+//    height: 350
+    anchors.fill: parent
 
     Material.background: Material.Blue
 

@@ -13,7 +13,7 @@ Window {
     width: 1280
     height: 720
     title: qsTr("Argon")
-// FONT MANENOS
+    // FONT MANENOS
     FontLoader { id: fontawesomeBrands; source: "qrc:/assets/fonts/brands.otf" }
     FontLoader { id: fontawesomeRegular; source: "qrc:/assets/fonts/regular.otf" }
     FontLoader { id: fontawesomeSolid; source: "qrc:/assets/fonts/solid.otf" }
@@ -21,20 +21,21 @@ Window {
     property alias fontawesomeBrands: fontawesomeBrands
     property alias fontawesomeeRegular: fontawesomeRegular
     property alias fontawesomeSolid: fontawesomeSolid
-// END OF FONT MANENOS
+    // END OF FONT MANENOS
 
     property alias stackId: stack
     property int tabIndex: 1
-//    property string pageUrl
+    //    property string pageUrl
 
     RowLayout {
-        spacing: 1
+        spacing: 0
         anchors.fill: parent
-//----------------THE SIDE BAR--------------------------------------
+        //----------------THE SIDE BAR--------------------------------------
         Pane {
             id: sidebar
             Layout.fillHeight: true
             Layout.preferredWidth: 200
+
             ColumnLayout{
 
                 spacing: 2
@@ -56,7 +57,7 @@ Window {
                     Layout.fillWidth: true
                     Tabs{
                         id: tabs
-//                        anchors.fill: parent
+                        //                        anchors.fill: parent
                         anchors {
                             left: parent.left
                             right: parent.right
@@ -66,28 +67,24 @@ Window {
 
             }
         }
-//----------------END OF THE THE SIDE BAR--------------------------------------
+        //----------------END OF THE THE SIDE BAR--------------------------------------
 
-//----------------THE THE MAIN BAR--------------------------------------
+        //----------------THE THE MAIN BAR--------------------------------------
         Pane {
             id: mainbar
+            Layout.margins: 0
             Layout.fillHeight: true
+//            Material.background: 'red'
             Layout.fillWidth: true
 
             ColumnLayout {
                 spacing: 1
-                //                anchors.fill: parent
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-
+                anchors.fill: parent
+                //----------------THE TOP BAR--------------------------------------
                 Pane {
                     Layout.preferredHeight: 80
                     Layout.fillWidth: true
                     Material.background: Material.Blue
-
-                    //----------------THE TOP BAR--------------------------------------
 
                     TopBar{
                         anchors {
@@ -96,39 +93,34 @@ Window {
                             right: parent.right
                         }
                     }
-                    //----------------END OF THE TOP BAR--------------------------------------
                 }
+                //----------------END OF THE TOP BAR--------------------------------------
 
-// THE BEGINNING OF STACKVIEW SECTION
+                //=============================THE BEGINNING OF STACKVIEW SECTION=============
                 Item {
-                    Layout.fillWidth: true
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
                     ScrollView {
-//                        anchors.fill: parent
-                        width: parent.width
-                        height: 600
+//                        z: -1
+                        anchors.fill: parent
                         clip: true
-                        Item{
+                        ScrollBar.vertical.policy: ScrollBar.AlwaysOn
+
+
+                        StackView {
+                            id: stack
                             anchors.fill: parent
-                            StackView {
-                                   id: stack
-                                   anchors.fill: parent
-                                   initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
-                               }
+                            initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
                         }
 
                     }
                 }
 
-
-
-
-
-//====----------------THE END OF STACKVIEW SECTION--------------------------------------
+                //====----------------THE END OF STACKVIEW SECTION--------------------------------------
 
             }
         }
-//---------------=======-END OF THE MAIN BAR--------------------------------------
+        //---------------=======-END OF THE MAIN BAR--------------------------------------
 
     }
 
