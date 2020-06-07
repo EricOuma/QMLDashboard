@@ -52,7 +52,6 @@ Pane {
                     }
                 }
 
-
             }
 
             Row {
@@ -82,26 +81,30 @@ Pane {
 
         //----------------THE OVERVIEW PANE--------------------------------------
 
-        RowLayout {
+        Flow {
             Layout.preferredWidth: parent.width
-            Layout.fillWidth: true
-            spacing: 5
+            property int childrenWidth: traffic.implicitWidth + users.implicitWidth + sales.implicitWidth + perf.implicitWidth
+            spacing: Math.max(10, ((parent.width - childrenWidth)/3))
             DataPane {
+                id: traffic
                 descText: "TOTAL TRAFFIC"
                 countText: "350,897"
                 iconText: "\uf0a6"
             }
             DataPane {
+                id: users
                 descText: "NEW USERS"
                 countText: "2,356"
                 iconText: "\uf200"
             }
             DataPane {
+                id: sales
                 descText: "SALES"
                 countText: "924"
                 iconText: "\uf1c0"
             }
             DataPane {
+                id: perf
                 descText: "PERFORMANCE"
                 countText: "49,65%"
                 iconText: "\uf012"
@@ -111,12 +114,19 @@ Pane {
 
         //----------------THE GRAPHS PANE--------------------------------------
 
-        RowLayout {
-            Layout.preferredWidth: parent.implicitWidth
-
+        Flow {
+            Layout.preferredWidth: parent.width
+            property int childrenWidth: salesChart.width + ordersGraph.width
+            spacing: Math.max(10, (parent.implicitWidth - childrenWidth))
             // graphs here
-            SalesChart {}
-            OrdersGraph {}
+            SalesChart {
+                id: salesChart
+                width: Math.max(300,((parent.width*2/3)-100))
+            }
+            OrdersGraph {
+                id: ordersGraph
+                width: Math.max(200,((parent.width/3)+50))
+            }
         }
         //----------------END OF THE GRAPHS PANE--------------------------------------
 

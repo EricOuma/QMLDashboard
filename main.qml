@@ -57,7 +57,6 @@ Window {
                     Layout.fillWidth: true
                     Tabs{
                         id: tabs
-                        //                        anchors.fill: parent
                         anchors {
                             left: parent.left
                             right: parent.right
@@ -97,21 +96,18 @@ Window {
                 //----------------END OF THE TOP BAR--------------------------------------
 
                 //=============================THE BEGINNING OF STACKVIEW SECTION=============
-                Item {
+                Rectangle {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     ScrollView {
-//                        z: -1
                         anchors.fill: parent
                         clip: true
-                        ScrollBar.vertical.policy: ScrollBar.AlwaysOn
 
-
-                        StackView {
-                            id: stack
-                            anchors.fill: parent
-                            initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
-                        }
+                            StackView {
+                                id: stack
+                                anchors.fill: parent
+                                initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
+                            }
 
                     }
                 }

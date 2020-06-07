@@ -8,8 +8,7 @@ import QtCharts 2.12
 RoundPane {
     Material.elevation: 1
     Material.background: "white"
-    Layout.preferredHeight: 500
-    Layout.preferredWidth: 400
+    height: 500
     ColumnLayout {
         anchors.fill: parent
         Column {
