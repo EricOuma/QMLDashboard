@@ -2,10 +2,12 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
+import QtQuick.Controls 1.4 as ControlsOne
 import QtQuick.Controls.Material 2.12
 import QtCharts 2.12
 
 import "./components"
+import "./views"
 
 Window {
     id: top
@@ -25,7 +27,6 @@ Window {
 
     property alias stackId: stack
     property int tabIndex: 1
-    //    property string pageUrl
 
     RowLayout {
         spacing: 0
@@ -73,7 +74,6 @@ Window {
             id: mainbar
             Layout.margins: 0
             Layout.fillHeight: true
-//            Material.background: 'red'
             Layout.fillWidth: true
 
             ColumnLayout {
@@ -85,7 +85,7 @@ Window {
                     Layout.fillWidth: true
                     Material.background: Material.Blue
 
-                    TopBar{
+                    TopBar {
                         anchors {
                             top: parent.top
                             left: parent.left
@@ -96,22 +96,17 @@ Window {
                 //----------------END OF THE TOP BAR--------------------------------------
 
                 //=============================THE BEGINNING OF STACKVIEW SECTION=============
-                Rectangle {
+
+                StackView {
+                    id: stack
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    ScrollView {
+                    initialItem: Dashboard {
+                        id: dashboard
                         anchors.fill: parent
-                        clip: true
-
-                            StackView {
-                                id: stack
-                                anchors.fill: parent
-                                initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
-                            }
-
                     }
-                }
 
+                }
                 //====----------------THE END OF STACKVIEW SECTION--------------------------------------
 
             }
@@ -119,5 +114,4 @@ Window {
         //---------------=======-END OF THE MAIN BAR--------------------------------------
 
     }
-
 }
