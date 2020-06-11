@@ -101,10 +101,7 @@ Window {
                     id: stack
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    initialItem: Dashboard {
-                        id: dashboard
-                        anchors.fill: parent
-                    }
+                    initialItem: Qt.resolvedUrl("qrc:/views/Dashboard.qml")
 
                 }
                 //====----------------THE END OF STACKVIEW SECTION--------------------------------------

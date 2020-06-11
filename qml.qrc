@@ -18,5 +18,7 @@
         <file>views/Register.qml</file>
         <file>views/Profile.qml</file>
         <file>views/Test.qml</file>
+        <file>components/PageVisits.qml</file>
+        <file>components/SocialTraffic.qml</file>
     </qresource>
 </RCC>

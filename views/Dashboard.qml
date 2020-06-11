@@ -13,16 +13,23 @@ Pane {
     Material.background: Material.Blue
     ScrollView {
         clip: true
+        id: scroll
         anchors.fill: parent
 
         ColumnLayout {
-            anchors.fill: parent
+            id: column
+            height: scroll.height
+            width: scroll.width
             spacing: 35
 
+
             //----------------THE NAVIGATION AND FILTER PANE--------------------------------------
+
+
             RowLayout {
-                Layout.fillHeight: true
-                Layout.fillWidth: true
+                Layout.preferredWidth: parent.width
+//                Layout.fillHeight: true
+//                Layout.fillWidth: true
 
                 Label {
                     Layout.alignment: Qt.AlignLeft
@@ -80,6 +87,8 @@ Pane {
                     }
                 }
             }
+
+
             //----------------END OF THE NAVIGATION AND FILTER PANE--------------------------------------
 
             //----------------THE OVERVIEW PANE--------------------------------------
@@ -124,17 +133,32 @@ Pane {
                 // graphs here
                 SalesChart {
                     id: salesChart
-                    width: Math.max(300,((parent.width*2/3)-100))
+                    width: parent.width >= 600? Math.max(533,((parent.width*2/3)-100)) : parent.implicitWidth
                 }
                 OrdersGraph {
                     id: ordersGraph
-                    width: Math.max(200,((parent.width/3)+50))
+                    width: parent.width >= 600? Math.max(266,((parent.width/3)+50)) : parent.implicitWidth
                 }
             }
             //----------------END OF THE GRAPHS PANE--------------------------------------
+            //----------------THE TABLES PANE--------------------------------------
+            Flow {
+                Layout.preferredWidth: parent.width
+                property int childrenWidth: pagevisits.width + socialtraffic.width
+                spacing: Math.max(10, (parent.implicitWidth - childrenWidth))
+                PageVisits {
+                    id: pagevisits
+                    width: parent.width >= 600? Math.max(533,((parent.width*2/3)-100)) : parent.implicitWidth
+                }
+                SocialTraffic {
+                    id: socialtraffic
+                    width: parent.width >= 600? Math.max(266,((parent.width/3)+50)) : parent.implicitWidth
+                }
+            }
+
+            //----------------END OF THE TABLES PANE--------------------------------------
 
         }
-
 
     }
 }
