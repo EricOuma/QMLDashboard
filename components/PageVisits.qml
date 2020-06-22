@@ -7,12 +7,14 @@ import QtQuick.Controls.Material 2.12
 RoundPane {
     Material.elevation: 1
     Material.background: "white"
-    height: 300
+    height: 350
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 4
         RowLayout {
             Layout.preferredWidth: parent.width
+            Layout.preferredHeight: 50
 
             Label {
                 text: "Page visits"
@@ -48,21 +50,20 @@ RoundPane {
 
                 rows: [
                     {
-                        "page name": "/argon/",
+                        "page name": "/argon/charts.html",
                         "visitors": "4,569",
                         "unique users": "340",
-                        "bounce rate": "46,53%"
+                        "bounce rate": "3333667676746,53%"
                     },
                     {
                         "page name": "/argon/index.html",
                         "visitors": "3,985",
                         "unique users": "319",
-                        "bounce rate": "46,53%
-"
+                        "bounce rate": "46,53%"
                     },
                     {
                         "page name": "/argon/charts.html",
-                        "visitors": "3,513",
+                        "visitors": "3,518,883",
                         "unique users": "294",
                         "bounce rate": "36,49%"
                     },
@@ -82,13 +83,17 @@ RoundPane {
             }
 
             delegate: Rectangle {
-                implicitWidth: 100
+                implicitWidth: text.implicitWidth + 50
                 implicitHeight: 50
                 border.width: 1
 
-                Text {
+                Label {
+                    id: text
                     text: display
                     anchors.centerIn: parent
+                    font.family: "Helvetica"
+                    font.pixelSize: 14
+                    color: "gray"
                 }
             }
         }

@@ -17,8 +17,14 @@
         <file>views/Dashboard.qml</file>
         <file>views/Register.qml</file>
         <file>views/Profile.qml</file>
-        <file>views/Test.qml</file>
         <file>components/PageVisits.qml</file>
         <file>components/SocialTraffic.qml</file>
+        <file>components/Footer.qml</file>
+        <file>assets/images/profile-cover.jpg</file>
+        <file>components/EditProfileForm.qml</file>
+        <file>components/ProfileCard.qml</file>
+        <file>assets/images/profile-card.jpg</file>
+        <file>assets/images/profile.jpg</file>
+        <file>components/RoundImage.qml</file>
     </qresource>
 </RCC>

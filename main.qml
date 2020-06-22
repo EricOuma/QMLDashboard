@@ -105,6 +105,14 @@ Window {
 
                 }
                 //====----------------THE END OF STACKVIEW SECTION--------------------------------------
+                //=============================THE BEGINNING OF FOOTER SECTION=============
+                Footer {
+                    id: footer
+                    Layout.preferredWidth: parent.width
+                    Layout.preferredHeight: 80
+                }
+
+                //====----------------THE END OF FOOTER SECTION--------------------------------------
 
             }
         }

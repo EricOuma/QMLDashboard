@@ -58,8 +58,7 @@ RoundPane {
                         "page name": "/argon/index.html",
                         "visitors": "3,985",
                         "unique users": "319",
-                        "bounce rate": "46,53%
-    "
+                        "bounce rate": "46,53%"
                     },
                     {
                         "page name": "/argon/charts.html",
@@ -83,13 +82,17 @@ RoundPane {
             }
 
             delegate: Rectangle {
-                implicitWidth: 100
+                implicitWidth: text.implicitWidth + 50
                 implicitHeight: 50
                 border.width: 1
 
                 Text {
+                    id: text
                     text: display
                     anchors.centerIn: parent
+                    font.family: "Helvetica"
+                    font.pixelSize: 14
+                    color: "gray"
                 }
             }
         }

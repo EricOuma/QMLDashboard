@@ -28,8 +28,6 @@ Pane {
 
             RowLayout {
                 Layout.preferredWidth: parent.width
-//                Layout.fillHeight: true
-//                Layout.fillWidth: true
 
                 Label {
                     Layout.alignment: Qt.AlignLeft

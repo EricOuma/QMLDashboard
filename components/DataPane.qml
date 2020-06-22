@@ -10,7 +10,9 @@ RoundPane {
     property alias descText: desc.text
     property alias countText: count.text
     property alias iconText: icon.text
+    implicitWidth: parent.width <= 400 ? parent.implicitWidth : thisColumn.implicitWidth + 30 // not working as expected
     Column {
+        id:thisColumn
         anchors.fill: parent
         spacing: 20
         RowLayout {
