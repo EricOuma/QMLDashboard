@@ -77,16 +77,21 @@ Item {
 
             Flow {
                 Layout.preferredWidth: parent.width
-                property int childrenWidth: profileForm.width + profileCard.width
-                spacing: Math.max(10, (parent.implicitWidth - childrenWidth))
-                // graphs here
+                property int childrenWidth: profileForm.implicitWidth + profileCard.implicitWidth
+                property real freeSpace: parent.width - childrenWidth
+                spacing: Math.max(10, (freeSpace/2))
+                Layout.leftMargin: Math.max(10, freeSpace/4)
+                Layout.rightMargin: Math.max(10, freeSpace/4)
+                Layout.topMargin: -70
+//                Component.onCompleted: console.log(freeSpace, profileForm.implicitWidth, parent.width)
+
                 EditProfileForm {
                     id: profileForm
-                    width: parent.width >= 600? Math.max(533,((parent.width*2/3)-100)) : parent.implicitWidth
+                    width: parent.width >= 600? Math.max(533,((parent.width*2/3)-50)) : parent.implicitWidth
                 }
                 ProfileCard {
                     id: profileCard
-                    width: parent.width >= 600? Math.max(266,((parent.width/3)+50)) : parent.implicitWidth
+                    width: parent.width >= 600? Math.max(266,((parent.width/3)-30)) : parent.implicitWidth
                 }
             }
         }

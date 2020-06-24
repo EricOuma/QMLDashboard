@@ -42,12 +42,12 @@ RowLayout {
             font.pixelSize: 15
             color: "white"
         }
-        Image {
+        RoundImage {
             id: userimage
-            Layout.preferredWidth: 40
-            Layout.preferredHeight: 40
+            sourceSize.width: 40
+            sourceSize.height: 40
             fillMode: Image.PreserveAspectFit
-            source: "qrc:/assets/images/user.jpg"
+            imgSource: "qrc:/assets/images/user.jpg"
         }
         Label {
             id: username

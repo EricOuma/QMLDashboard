@@ -26,5 +26,6 @@
         <file>assets/images/profile-card.jpg</file>
         <file>assets/images/profile.jpg</file>
         <file>components/RoundImage.qml</file>
+        <file>components/FormTextField.qml</file>
     </qresource>
 </RCC>

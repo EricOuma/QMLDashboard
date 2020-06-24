@@ -9,6 +9,7 @@ RoundPane {
     Material.elevation: 1
     Material.background: "white"
     height: profilePic.implicitHeight + rowButtons.implicitHeight + rowTwo.implicitHeight + rowThree.implicitHeight + 80
+    padding: 0
 
     ColumnLayout {
         id: column
@@ -21,7 +22,8 @@ RoundPane {
         }
          RowLayout {
              id: rowButtons
-             Layout.topMargin: -(userPhoto.height/2+60)
+             Layout.margins: 10
+             Layout.topMargin: -(userPhoto.height/2+55)
              Layout.preferredWidth: parent.width
              Layout.fillWidth: true
              Layout.preferredHeight: userPhoto.height
@@ -30,10 +32,12 @@ RoundPane {
                  Layout.alignment: Qt.AlignBottom
                  Material.elevation: 1
                  Material.background: "blue"
+                 Layout.fillWidth: true
 
                  Label {
                      text: "Connect"
                      color: "white"
+                     anchors.centerIn: parent
                  }
              }
              RoundImage {
@@ -44,15 +48,16 @@ RoundPane {
                  borderColor: "white"
                  borderSize: 4
              }
-
              RoundPane {
                  Layout.alignment: Qt.AlignBottom
                  Material.elevation: 1
                  Material.background: "purple"
+                 Layout.fillWidth: true
 
                  Label {
                      text: "Message"
                      color: "white"
+                     anchors.centerIn: parent
                  }
              }
          }
@@ -64,6 +69,8 @@ RoundPane {
              Layout.alignment: Qt.AlignHCenter
              Layout.fillWidth: true
              Column {
+                 spacing: 10
+                 Layout.fillWidth: true
                  Label {
                      text: "22"
                      font.bold: true
@@ -75,6 +82,8 @@ RoundPane {
                  }
              }
              Column {
+                 spacing: 10
+                 Layout.fillWidth: true
                  Label {
                      text: "10"
                      font.bold: true
@@ -86,6 +95,8 @@ RoundPane {
                  }
              }
              Column {
+                 spacing: 10
+                 Layout.fillWidth: true
                  Label {
                      text: "89"
                      font.bold: true
@@ -104,6 +115,7 @@ RoundPane {
              Layout.fillWidth: true
              Column {
                  spacing: 15
+                 Layout.fillWidth: true
                  Label {
                      text: "Jessica Jones, 27"
                      font.bold: true
