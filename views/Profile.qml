@@ -17,7 +17,7 @@ Item {
             width: scroll.width
             Image {
                 Layout.preferredWidth: parent.width
-                Layout.preferredHeight: Math.max(500, parent.height)
+                Layout.preferredHeight: 500
                 source: "qrc:/assets/images/profile-cover.jpg"
                 fillMode: Image.PreserveAspectCrop
 

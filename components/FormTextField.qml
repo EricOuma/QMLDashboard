@@ -3,10 +3,10 @@ import QtQuick.Controls 2.12
 
 TextField {
     property string placeholder
-    property int rectWidth: parent.width
-    Component.onCompleted: console.log(parent.width)
+    property int rectWidth
+    id: control
 
-    placeholderText: placeholder
+    placeholderText: " "+placeholder
 
     background: Rectangle {
         implicitWidth: rectWidth

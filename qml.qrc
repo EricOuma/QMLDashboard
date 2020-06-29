@@ -27,5 +27,8 @@
         <file>assets/images/profile.jpg</file>
         <file>components/RoundImage.qml</file>
         <file>components/FormTextField.qml</file>
+        <file>components/CustomCheckBox.qml</file>
+        <file>assets/images/github.svg</file>
+        <file>assets/images/google.svg</file>
     </qresource>
 </RCC>
